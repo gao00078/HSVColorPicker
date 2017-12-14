@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    tools:context="com.gao00078algonquinlive.hsvcolorpicker.MainActivity">
+
+
+    <TextView
+        android:id="@+id/color_swatch"
+        android:layout_width="320dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/hue_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/color_swatch"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/hue_scrollBar"
+        android:text="@string/hue"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <FrameLayout
+        android:id="@+id/hue_frameWork"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/hue_textView"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/hue_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_hue" />
+
+        <SeekBar
+            android:id="@+id/hue_scrollBar"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="360" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/saturation_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/hue_frameWork"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/saturation_scrollBar"
+        android:text="@string/saturation"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <FrameLayout
+        android:id="@+id/saturation_frameWork"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/saturation_textView"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/saturation_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_saturation" />
+
+        <SeekBar
+            android:id="@+id/saturation_scrollBar"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="360" />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/VB_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/saturation_frameWork"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:labelFor="@+id/VB_scrollBar"
+        android:text="@string/VB"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <FrameLayout
+        android:id="@+id/VB_frameWork"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/VB_textView"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/VB_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_brightness" />
+
+        <SeekBar
+            android:id="@+id/VB_scrollBar"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="360" />
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/VB_frameWork"
+        android:layout_marginTop="32dp">
+
+        <LinearLayout
+            android:id="@+id/button_menu"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/black_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/red_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/red"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/lime_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/lime"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/blue_button"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/blue"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/yellow_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/yellow"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/cyan_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/cyan"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/magenta_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/magenta"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/silver_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/silver"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/gray_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/gray"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/maroon_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/maroon"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/olive_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/olive"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/green_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/green"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/purple_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/purple"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/teal_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/teal"
+                android:onClick="changeColor" />
+
+            <Button
+                android:id="@+id/navy_button"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:background="@color/navy"
+                android:onClick="changeColor" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+</RelativeLayout>
